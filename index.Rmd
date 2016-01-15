@@ -1,0 +1,77 @@
+---
+title: "Housing Permit Data Summary"
+author: Ryan Hafen
+output:
+  packagedocs:
+    toc: true
+    css: menu-fix.css
+navpills: |
+  <li class='active'><a href="index.html">All Datasets</a></li>
+  <li role="presentation" class="dropdown ">
+  <a id="study-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">Dataset <span class="caret"></span></a>
+  <ul id="menu1" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="study-drop">
+  <li class=''><a href='BOS1.html'>BOS1</a></li>
+  <li class=''><a href='BOS2.html'>BOS2</a></li>
+  <li class=''><a href='CHI1.html'>CHI1</a></li>
+  <li class=''><a href='ED1.html'>ED1</a></li>
+  <li class=''><a href='ED2.html'>ED2</a></li>
+  <li class=''><a href='IL1.html'>IL1</a></li>
+  <li class=''><a href='IL2.html'>IL2</a></li>
+  <li class=''><a href='MD1.html'>MD1</a></li>
+  <li class=''><a href='MD2.html'>MD2</a></li>
+  <li class=''><a href='MD3.html'>MD3</a></li>
+  <li class=''><a href='MD4.html'>MD4</a></li>
+  <li class=''><a href='MD5.html'>MD5</a></li>
+  <li class=''><a href='MD6.html'>MD6</a></li>
+  <li class=''><a href='MO1.html'>MO1</a></li>
+  <li class=''><a href='MO2.html'>MO2</a></li>
+  <li class=''><a href='MO3.html'>MO3</a></li>
+  <li class=''><a href='MO4.html'>MO4</a></li>
+  <li class=''><a href='MO5.html'>MO5</a></li>
+  <li class=''><a href='MO6.html'>MO6</a></li>
+  <li class=''><a href='MO7.html'>MO7</a></li>
+  <li class=''><a href='NO1.html'>NO1</a></li>
+  <li class=''><a href='NO2.html'>NO2</a></li>
+  <li class=''><a href='NYC2.html'>NYC2</a></li>
+  <li class=''><a href='SEA1.html'>SEA1</a></li>
+  <li class=''><a href='SEA2.html'>SEA2</a></li>
+  <li class=''><a href='WA.html'>WA</a></li>
+  </ul>
+  </li>
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(rbokeh)
+library(knitr)
+load("/var/folders/n4/6ztyqms165s3r_4n001n1y6m0000gn/T//RtmpvNpZPH/file421b307ead3c")
+load("/var/folders/n4/6ztyqms165s3r_4n001n1y6m0000gn/T//RtmpvNpZPH/file421b4c9f5703")
+for(nm in names(dots))
+  assign(nm, dots[[nm]])
+```
+
+
+
+# Common Variables #
+
+The plots below shows how many times a variable is found across all of the data sets.
+
+```{r echo=FALSE, message=FALSE}
+plot_common_vars_tab(di_list)
+```
+
+```{r echo=FALSE, message=FALSE}
+plot_common_vars_freq(di_list)
+```
+
+# Number of Rows #
+
+```{r echo=FALSE, message=FALSE}
+plot_nrows(di_list)
+```
+
+# Number of Variables #
+
+```{r echo=FALSE, message=FALSE}
+plot_nvars(di_list)
+```

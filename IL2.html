@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+
+    <meta name="author" content="Ryan Hafen" />
+  
+  
+  <title>Housing Permit Data Summary: IL2</title>
+
+    <script src="assets/jquery-1.11.1/jquery.min.js"></script>
+  <link href="assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+  <script src="assets/bootstrap-3.3.2/shim/html5shiv.min.js"></script>
+  <script src="assets/bootstrap-3.3.2/shim/respond.min.js"></script>
+  <link href="assets/highlight-8.4/tomorrow.css" rel="stylesheet" />
+  <script src="assets/highlight-8.4/highlight.pack.js"></script>
+  <link href="assets/fontawesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script src="assets/stickykit-1.1.1/sticky-kit.min.js"></script>
+  <script src="assets/jqueryeasing-1.3/jquery.easing.min.js"></script>
+  <link href="assets/packagedocs-0.0.1/pd.css" rel="stylesheet" />
+  <script src="assets/packagedocs-0.0.1/pd.js"></script>
+  <script src="assets/packagedocs-0.0.1/pd-sticky-toc.js"></script>
+  <script src="assets/htmlwidgets-0.5/htmlwidgets.js"></script>
+  <link href="assets/bokehjs-0.10.0/bokeh.min.css" rel="stylesheet" />
+  <script src="assets/bokehjs-0.10.0/bokeh.min.js"></script>
+  <script src="assets/rbokeh-binding-0.2.4.1/rbokeh.js"></script>
+  <script src="assets/datatables-binding-0.1.16/datatables.js"></script>
+  <script src="assets/datatables-1.10.7/jquery.dataTables.min.js"></script>
+  <link href="assets/datatables-default-1.10.7/dataTables.extra.css" rel="stylesheet" />
+  <link href="assets/datatables-default-1.10.7/jquery.dataTables.min.css" rel="stylesheet" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="assets/menu-fix.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<body>
+
+  
+  <header class="navbar navbar-white navbar-fixed-top" role="banner" id="header">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a href="index.html" class="navbar-brand page-scroll">
+        Housing Permit Data Summary: IL2
+        </a>
+      </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav nav-pills pull-right">
+<li class>
+<a href="index.html">All Datasets</a>
+</li>
+<li role="presentation" class="dropdown active">
+<a id="study-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">Dataset (IL2)<span class="caret"></span></a>
+<ul id="menu1" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="study-drop">
+<li class>
+<a href='BOS1.html'>BOS1</a>
+</li>
+<li class>
+<a href='BOS2.html'>BOS2</a>
+</li>
+<li class>
+<a href='CHI1.html'>CHI1</a>
+</li>
+<li class>
+<a href='ED1.html'>ED1</a>
+</li>
+<li class>
+<a href='ED2.html'>ED2</a>
+</li>
+<li class>
+<a href='IL1.html'>IL1</a>
+</li>
+<li class="active">
+<a href='IL2.html'>IL2</a>
+</li>
+<li class>
+<a href='MD1.html'>MD1</a>
+</li>
+<li class>
+<a href='MD2.html'>MD2</a>
+</li>
+<li class>
+<a href='MD3.html'>MD3</a>
+</li>
+<li class>
+<a href='MD4.html'>MD4</a>
+</li>
+<li class>
+<a href='MD5.html'>MD5</a>
+</li>
+<li class>
+<a href='MD6.html'>MD6</a>
+</li>
+<li class>
+<a href='MO1.html'>MO1</a>
+</li>
+<li class>
+<a href='MO2.html'>MO2</a>
+</li>
+<li class>
+<a href='MO3.html'>MO3</a>
+</li>
+<li class>
+<a href='MO4.html'>MO4</a>
+</li>
+<li class>
+<a href='MO5.html'>MO5</a>
+</li>
+<li class>
+<a href='MO6.html'>MO6</a>
+</li>
+<li class>
+<a href='MO7.html'>MO7</a>
+</li>
+<li class>
+<a href='NO1.html'>NO1</a>
+</li>
+<li class>
+<a href='NO2.html'>NO2</a>
+</li>
+<li class>
+<a href='NYC2.html'>NYC2</a>
+</li>
+<li class>
+<a href='SEA1.html'>SEA1</a>
+</li>
+<li class>
+<a href='SEA2.html'>SEA2</a>
+</li>
+<li class>
+<a href='WA.html'>WA</a>
+</li>
+</ul>
+</li>
+        </ul>
+      </nav>
+          </div>
+  </header>
+
+  <!-- Begin Body -->
+  <div class="container">
+    <div class="row">
+            <div class="col-md-3" id="sidebar-col">
+        <div id="toc">
+          <ul>
+          <li><a href="#meta">Meta</a></li>
+          <li><a href="#sample">Sample</a></li>
+          <li><a href="#missing-values">Missing Values</a></li>
+          <li><a href="#variables">Variables</a><ul>
+          <li><a href="#location_1">location_1</a></li>
+          <li><a href="#permit_no_or_type">permit_no_or_type</a></li>
+          <li><a href="#date_permit_issued">date_permit_issued</a></li>
+          </ul></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9" id="content-col">
+      
+<div id="content-top"></div>
+<div id="meta" class="section level1">
+<h1>Meta</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="left">property</th>
+<th align="left">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">dataset name</td>
+<td align="left">SSMMA Village Of Midlothian Building Permits Issued 2011- August 2012</td>
+</tr>
+<tr class="even">
+<td align="left">data source</td>
+<td align="left">State of Illinois</td>
+</tr>
+<tr class="odd">
+<td align="left">data level</td>
+<td align="left">City</td>
+</tr>
+<tr class="even">
+<td align="left">description</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">permalink</td>
+<td align="left"><a href="https://data.illinois.gov/Municipality/SSMMA-Village-Of-Midlothian-Building-Permits-Issue/cii2-ipkp" class="uri">https://data.illinois.gov/Municipality/SSMMA-Village-Of-Midlothian-Building-Permits-Issue/cii2-ipkp</a></td>
+</tr>
+<tr class="even">
+<td align="left">dataset key</td>
+<td align="left">cii2-ipkp</td>
+</tr>
+<tr class="odd">
+<td align="left">number of records</td>
+<td align="left">1216</td>
+</tr>
+<tr class="even">
+<td align="left">number of variables</td>
+<td align="left">11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sample" class="section level1">
+<h1>Sample</h1>
+<pre><code>##                 location_1 :created_at :updated_at permit_no_or_type
+## 1 14049 Walter Hagen Ln.\n  1354039175  1354039175        Electrical
+## 2         14301 Keystone\n  1354039175  1354039175             3725B
+## 3         14301 Keystone\n  1354039175  1354039175             3721A
+## 4           14307 Keeler\n  1354039175  1354039175             Misc.
+## 5         14311 Keystone\n  1354039175  1354039175             Misc.
+## 6         14315 Keystone\n  1354039175  1354039175             Misc.
+##   :created_meta  date_permit_issued                                  :id
+## 1        393634 2012-05-08T00:00:00 F5027378-A320-432A-BE01-7EB88920687E
+## 2        393634 2011-12-12T00:00:00 47956DCB-A5BC-4BF5-A3D7-1ED4AA98224D
+## 3        393634 2011-09-23T00:00:00 289215E8-4F53-4133-AE80-D464574E5E5B
+## 4        393634 2012-05-21T00:00:00 56E5FB44-8EAF-4E11-90C6-6F5AE8BA4590
+## 5        393634 2011-09-14T00:00:00 60F5A1A8-A55A-4E79-B29B-9259949328CE
+## 6        393634 2011-09-15T00:00:00 56AED933-2385-45E4-A10E-CBD9E0AA18F1
+##   :meta :updated_meta :sid :position
+## 1  {\n}        393634    1         1
+## 2  {\n}        393634    2         2
+## 3  {\n}        393634    3         3
+## 4  {\n}        393634    4         4
+## 5  {\n}        393634    5         5
+## 6  {\n}        393634    6         6</code></pre>
+</div>
+<div id="missing-values" class="section level1">
+<h1>Missing Values</h1>
+<p><div id="htmlwidget-3496" style="width:800px;height:600px;" class="rbokeh"></div>
+<script type="application/json" data-for="htmlwidget-3496">{"x":{"elementid":"98219f8291607bbf2b31a9070a3f755f","modeltype":"Plot","modelid":"3b18ff879a717ab60034a9e3b248061f","padding":{"type":"figure","y_pad":10,"x_pad":46},"all_models":[{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","attributes":{"title":null,"id":"3b18ff879a717ab60034a9e3b248061f","plot_width":790,"plot_height":554,"x_range":{"type":"FactorRange","id":"441443521c59cc2dba4541577bfcc3f6"},"y_range":{"type":"Range1d","id":"fdd9deb5522fe7dc09fa9edd53b2099e"},"left":[{"type":"LinearAxis","id":"1ab356be4cef69328f7a8225f22dbb22"}],"below":[{"type":"CategoricalAxis","id":"ec8e8eed5b00a23481c637a86203e12b"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"30058805eafa3f4c2888e33ca4637fa5"},{"type":"CategoricalAxis","id":"ec8e8eed5b00a23481c637a86203e12b"},{"type":"Grid","id":"b3e8659034ed4553ee73307a64007560"},{"type":"GlyphRenderer","id":"cbc50be78cf796c38fa40516a3de68a0"},{"type":"GlyphRenderer","id":"855bda6544175080722499e25ccd2178"},{"type":"Legend","id":"077f822b8ab5f65dea776bf4beda5bb1"},{"type":"LinearAxis","id":"1ab356be4cef69328f7a8225f22dbb22"},{"type":"Grid","id":"be10b020f3c42efdd6a445856f66fde4"}],"tools":[{"type":"PanTool","id":"ac8a174893f7089b84ab5b8af9b59069"},{"type":"WheelZoomTool","id":"64e6a2eaa764c4b34f6c9dbab71e848b"},{"type":"BoxZoomTool","id":"70f4c39d0893a9ea2b0e44baf55b86c2"},{"type":"ResizeTool","id":"5844b2f062353ba8281c4c92716d8ca0"},{"type":"ResetTool","id":"312b2dcb923f1eb769d6a929771b220d"},{"type":"PreviewSaveTool","id":"4b6a6b624b945da89c0b23ddf0d77c01"},{"type":"HelpTool","id":"4d55495af8c379a19dff4e849bc46179"}],"tool_events":{"type":"ToolEvents","id":"9876b10f33c4949095f42836cafd3274"},"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"doc":null,"min_border":4,"lod_threshold":null},"subtype":"Figure"},{"type":"PanTool","id":"ac8a174893f7089b84ab5b8af9b59069","attributes":{"id":"ac8a174893f7089b84ab5b8af9b59069","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"ToolEvents","id":"9876b10f33c4949095f42836cafd3274","attributes":{"id":"9876b10f33c4949095f42836cafd3274","tags":[],"doc":null},"geometries":[]},{"type":"WheelZoomTool","id":"64e6a2eaa764c4b34f6c9dbab71e848b","attributes":{"id":"64e6a2eaa764c4b34f6c9dbab71e848b","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"BoxZoomTool","id":"70f4c39d0893a9ea2b0e44baf55b86c2","attributes":{"id":"70f4c39d0893a9ea2b0e44baf55b86c2","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"}}},{"type":"ResizeTool","id":"5844b2f062353ba8281c4c92716d8ca0","attributes":{"id":"5844b2f062353ba8281c4c92716d8ca0","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"}}},{"type":"ResetTool","id":"312b2dcb923f1eb769d6a929771b220d","attributes":{"id":"312b2dcb923f1eb769d6a929771b220d","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"}}},{"type":"PreviewSaveTool","id":"4b6a6b624b945da89c0b23ddf0d77c01","attributes":{"id":"4b6a6b624b945da89c0b23ddf0d77c01","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"}}},{"type":"HelpTool","id":"4d55495af8c379a19dff4e849bc46179","attributes":{"id":"4d55495af8c379a19dff4e849bc46179","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"redirect":["http://hafen.github.io/rbokeh"],"help_tooltip":["Click to learn more about rbokeh."]}},{"type":"ColumnDataSource","id":"55060acf522b34e8dda8404dabb6b98e","attributes":{"id":"55060acf522b34e8dda8404dabb6b98e","tags":[],"doc":null,"column_names":["left","right","top","bottom","line_color","fill_color"],"selected":[],"discrete_ranges":{},"cont_ranges":{},"data":{"left":["date_permit_issued:0","date_permit_issued:0","location_1:0","location_1:0","permit_no_or_type:0","permit_no_or_type:0"],"right":["date_permit_issued:1","date_permit_issued:1","location_1:1","location_1:1","permit_no_or_type:1","permit_no_or_type:1"],"top":[0,1216,0,1216,0,1216],"bottom":[0,0,0,0,0,0],"line_color":["#1F77B4","#FF7F0E","#1F77B4","#FF7F0E","#1F77B4","#FF7F0E"],"fill_color":["#1F77B4","#FF7F0E","#1F77B4","#FF7F0E","#1F77B4","#FF7F0E"]}}},{"type":"Quad","id":"c6e906d0bd411f7d30b23090edc2ea37","attributes":{"id":"c6e906d0bd411f7d30b23090edc2ea37","tags":[],"doc":null,"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"left":{"units":"data","field":"left"},"right":{"units":"data","field":"right"},"top":{"units":"data","field":"top"},"bottom":{"units":"data","field":"bottom"},"line_color":{"units":"data","field":"line_color"},"fill_color":{"units":"data","field":"fill_color"}}},{"type":"Quad","id":"12610c3f85143ea789cc4c91f2cc7f1a","attributes":{"id":"12610c3f85143ea789cc4c91f2cc7f1a","tags":[],"doc":null,"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"left":{"units":"data","field":"left"},"right":{"units":"data","field":"right"},"top":{"units":"data","field":"top"},"bottom":{"units":"data","field":"bottom"},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"}}},{"type":"GlyphRenderer","id":"30058805eafa3f4c2888e33ca4637fa5","attributes":{"id":"30058805eafa3f4c2888e33ca4637fa5","tags":[],"doc":null,"selection_glyph":null,"nonselection_glyph":{"type":"Quad","id":"12610c3f85143ea789cc4c91f2cc7f1a"},"server_data_source":null,"name":null,"data_source":{"type":"ColumnDataSource","id":"55060acf522b34e8dda8404dabb6b98e"},"glyph":{"type":"Quad","id":"c6e906d0bd411f7d30b23090edc2ea37"}}},{"type":"CategoricalAxis","id":"ec8e8eed5b00a23481c637a86203e12b","attributes":{"id":"ec8e8eed5b00a23481c637a86203e12b","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"axis_label":"variable","formatter":{"type":"CategoricalTickFormatter","id":"617134933afe588fe01634a93a23f0a5"},"ticker":{"type":"CategoricalTicker","id":"d82ece0977fe71686758261b51d1a125"},"visible":true,"major_label_orientation":1.0471975511966,"axis_label_text_font_size":"12pt"}},{"type":"CategoricalTickFormatter","id":"617134933afe588fe01634a93a23f0a5","attributes":{"id":"617134933afe588fe01634a93a23f0a5","tags":[],"doc":null}},{"type":"CategoricalTicker","id":"d82ece0977fe71686758261b51d1a125","attributes":{"id":"d82ece0977fe71686758261b51d1a125","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"b3e8659034ed4553ee73307a64007560","attributes":{"id":"b3e8659034ed4553ee73307a64007560","tags":[],"doc":null,"dimension":0,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"ticker":{"type":"CategoricalTicker","id":"d82ece0977fe71686758261b51d1a125"},"grid_line_alpha":{"units":"data","value":0.3}}},{"type":"ColumnDataSource","id":"de1d11eda9c5ab64c4c831285dfe6869","attributes":{"id":"de1d11eda9c5ab64c4c831285dfe6869","tags":[],"doc":null,"column_names":["x","y"],"selected":[],"discrete_ranges":{},"cont_ranges":{},"data":{"x":["",""],"y":[null,null]}}},{"type":"Quad","id":"ecf861559d42d6298da47416c5bcd84a","attributes":{"id":"ecf861559d42d6298da47416c5bcd84a","tags":[],"doc":null,"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Quad","id":"41d84d7e66f3a372dcc34f8ac5563598","attributes":{"id":"41d84d7e66f3a372dcc34f8ac5563598","tags":[],"doc":null,"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"cbc50be78cf796c38fa40516a3de68a0","attributes":{"id":"cbc50be78cf796c38fa40516a3de68a0","tags":[],"doc":null,"selection_glyph":null,"nonselection_glyph":{"type":"Quad","id":"41d84d7e66f3a372dcc34f8ac5563598"},"server_data_source":null,"name":null,"data_source":{"type":"ColumnDataSource","id":"de1d11eda9c5ab64c4c831285dfe6869"},"glyph":{"type":"Quad","id":"ecf861559d42d6298da47416c5bcd84a"}}},{"type":"Quad","id":"3458d1ce85f803a41c1d0b1795f7f5dd","attributes":{"id":"3458d1ce85f803a41c1d0b1795f7f5dd","tags":[],"doc":null,"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#FF7F0E"},"fill_color":{"units":"data","value":"#FF7F0E"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Quad","id":"3a68232ac3ca2698a1fc95ed6e82e66b","attributes":{"id":"3a68232ac3ca2698a1fc95ed6e82e66b","tags":[],"doc":null,"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"855bda6544175080722499e25ccd2178","attributes":{"id":"855bda6544175080722499e25ccd2178","tags":[],"doc":null,"selection_glyph":null,"nonselection_glyph":{"type":"Quad","id":"3a68232ac3ca2698a1fc95ed6e82e66b"},"server_data_source":null,"name":null,"data_source":{"type":"ColumnDataSource","id":"de1d11eda9c5ab64c4c831285dfe6869"},"glyph":{"type":"Quad","id":"3458d1ce85f803a41c1d0b1795f7f5dd"}}},{"type":"Legend","id":"077f822b8ab5f65dea776bf4beda5bb1","attributes":{"id":"077f822b8ab5f65dea776bf4beda5bb1","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"legends":[["type",[]],[" NA",[{"type":"GlyphRenderer","id":"cbc50be78cf796c38fa40516a3de68a0"}]],[" non-NA",[{"type":"GlyphRenderer","id":"855bda6544175080722499e25ccd2178"}]]],"orientation":"top_right"}},{"type":"FactorRange","id":"441443521c59cc2dba4541577bfcc3f6","attributes":{"id":"441443521c59cc2dba4541577bfcc3f6","tags":[],"doc":null,"factors":["date_permit_issued","location_1","permit_no_or_type"]}},{"type":"Range1d","id":"fdd9deb5522fe7dc09fa9edd53b2099e","attributes":{"id":"fdd9deb5522fe7dc09fa9edd53b2099e","tags":[],"doc":null,"start":-85.12,"end":1301.12}},{"type":"LinearAxis","id":"1ab356be4cef69328f7a8225f22dbb22","attributes":{"id":"1ab356be4cef69328f7a8225f22dbb22","tags":[],"doc":null,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"axis_label":"count","formatter":{"type":"BasicTickFormatter","id":"0d375956e68d126dab32091f5cb07fb2"},"ticker":{"type":"BasicTicker","id":"34e5eb622285d28a7f91a9a67e9d187a"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"0d375956e68d126dab32091f5cb07fb2","attributes":{"id":"0d375956e68d126dab32091f5cb07fb2","tags":[],"doc":null}},{"type":"BasicTicker","id":"34e5eb622285d28a7f91a9a67e9d187a","attributes":{"id":"34e5eb622285d28a7f91a9a67e9d187a","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"be10b020f3c42efdd6a445856f66fde4","attributes":{"id":"be10b020f3c42efdd6a445856f66fde4","tags":[],"doc":null,"dimension":1,"plot":{"type":"Plot","id":"3b18ff879a717ab60034a9e3b248061f","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"34e5eb622285d28a7f91a9a67e9d187a"}}}]},"evals":[]}</script></p>
+</div>
+<div id="variables" class="section level1">
+<h1>Variables</h1>
+<!--
+
+
+variable             type      
+-------------------  ----------
+location_1           character 
+permit_no_or_type    character 
+date_permit_issued   character 
+-->
+<p>The following variables are duplicates:</p>
+<ul>
+<li><code>:sid</code>, <code>:position</code></li>
+<li><code>:created_at</code>, <code>:updated_at</code></li>
+<li><code>:created_meta</code>, <code>:updated_meta</code></li>
+</ul>
+<div id="location_1" class="section level2">
+<h2>location_1</h2>
+<div id="distribution-of-top-50-variables" class="section level3">
+<h3>Distribution of top 50 variables</h3>
+<p><div id="htmlwidget-7873" style="width:750px;height:700px;" class="rbokeh"></div>
+<script type="application/json" data-for="htmlwidget-7873">{"x":{"elementid":"a0bec08a93e4c8e5c47262f0ea43463f","modeltype":"Plot","modelid":"4e868d0640716a9481ec09de11913536","padding":{"type":"figure","y_pad":10,"x_pad":46},"all_models":[{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","attributes":{"title":null,"id":"4e868d0640716a9481ec09de11913536","plot_width":740,"plot_height":654,"x_range":{"type":"Range1d","id":"48772eeea989263a8622b1e0547edab9"},"y_range":{"type":"FactorRange","id":"22af7d396e1825c1d092803af2049ea2"},"left":[{"type":"CategoricalAxis","id":"f19b50aa03da2afe94c7823922c049dd"}],"below":[{"type":"LinearAxis","id":"3c9197481fdb612460f6cca8b88f3468"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"ec16192373c0b98947448d3bb387e63a"},{"type":"LinearAxis","id":"3c9197481fdb612460f6cca8b88f3468"},{"type":"Grid","id":"c8f5b1160a368fc77b20ff9dfe91bfe0"},{"type":"CategoricalAxis","id":"f19b50aa03da2afe94c7823922c049dd"},{"type":"Grid","id":"78ead6f30c454494bf7d328d4ecea6ff"}],"tools":[{"type":"PanTool","id":"fcaeb106b010926316acd3afa1cd0947"},{"type":"WheelZoomTool","id":"5a2fcfd406f280ca6e39c2d8c688b10c"},{"type":"BoxZoomTool","id":"4b4f7e371897f6cacb9926c8a03734ec"},{"type":"ResizeTool","id":"8b8633b1f6912ad0a4190efd6331ed07"},{"type":"ResetTool","id":"ce6382265910c4073d626d62744ffbbf"},{"type":"PreviewSaveTool","id":"90b2fe4330fa8cac7d5f75c0dfab9597"},{"type":"HelpTool","id":"f33461bb3c7028162e8ed3a85edb5ec4"},{"type":"HoverTool","id":"cdcd49d21b435954f328ee9fb5c9e301"}],"tool_events":{"type":"ToolEvents","id":"60791975e763d2b59d8fafc93d823b78"},"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"doc":null,"min_border":4,"lod_threshold":null},"subtype":"Figure"},{"type":"PanTool","id":"fcaeb106b010926316acd3afa1cd0947","attributes":{"id":"fcaeb106b010926316acd3afa1cd0947","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"ToolEvents","id":"60791975e763d2b59d8fafc93d823b78","attributes":{"id":"60791975e763d2b59d8fafc93d823b78","tags":[],"doc":null},"geometries":[]},{"type":"WheelZoomTool","id":"5a2fcfd406f280ca6e39c2d8c688b10c","attributes":{"id":"5a2fcfd406f280ca6e39c2d8c688b10c","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"BoxZoomTool","id":"4b4f7e371897f6cacb9926c8a03734ec","attributes":{"id":"4b4f7e371897f6cacb9926c8a03734ec","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"}}},{"type":"ResizeTool","id":"8b8633b1f6912ad0a4190efd6331ed07","attributes":{"id":"8b8633b1f6912ad0a4190efd6331ed07","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"}}},{"type":"ResetTool","id":"ce6382265910c4073d626d62744ffbbf","attributes":{"id":"ce6382265910c4073d626d62744ffbbf","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"}}},{"type":"PreviewSaveTool","id":"90b2fe4330fa8cac7d5f75c0dfab9597","attributes":{"id":"90b2fe4330fa8cac7d5f75c0dfab9597","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"}}},{"type":"HelpTool","id":"f33461bb3c7028162e8ed3a85edb5ec4","attributes":{"id":"f33461bb3c7028162e8ed3a85edb5ec4","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"redirect":["http://hafen.github.io/rbokeh"],"help_tooltip":["Click to learn more about rbokeh."]}},{"type":"HoverTool","id":"cdcd49d21b435954f328ee9fb5c9e301","attributes":{"id":"cdcd49d21b435954f328ee9fb5c9e301","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"ec16192373c0b98947448d3bb387e63a"}],"names":[],"always_active":true,"tooltips":[["value","@hover_value"],["Freq","@hover_Freq"]]}},{"type":"ColumnDataSource","id":"66dec5e3904917ea52167795fd484ec3","attributes":{"id":"66dec5e3904917ea52167795fd484ec3","tags":[],"doc":null,"column_names":["x","y","hover_value","hover_Freq"],"selected":[],"discrete_ranges":{},"cont_ranges":{},"data":{"x":[10,10,10,10,8,8,8,8,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],"y":["1- 4648 147th St.\n","2- 3838 147th St.\n","3- 3320 147th St.\n","4- 14636 Pulaski\n","5- 4050 147th St.\n","6- 14840 Ketelaar\n","7- 14736 Pulaski\n","8- 14416 Homan\n","9- 3834 147th St.\n","10- 3832 147th St.\n","11- 3433 147th St.\n","12- 3316 147th St.\n","13- 3249 147th St.\n","14- 14821 Kilbourn\n","15- 14726 Cicero\n","16- 14652 Avers\n","17- 14650 Waverly\n","18- 14559 Sawyer\n","19- 14541 Keating\n","20- 14518 Tripp .\n","21- 14458 Kedvale\n","22- 14410 Karlov\n","23- 14401 Cicero\n","24- 4936 147th Ct.\n","25- 4704 147th St\n","26- 4660 147th St.\n","27- 4438 150th St.\n","28- 4344 147th St.\n","29- 4222 147th St.\n","30- 4039 147th St.\n","31- 3930 151st Pl.\n","32- 3905 153rd Pl.\n","33- 3744 147th Pl.\n","34- 3740 153rd Pl.\n","35- 3652 153rd St.\n","36- 3613 148th Pl.\n","37- 3542 147th St.\n","38- 15252 Millard\n","39- 15229 Ridgeway\n","40- 15225 Millard\n","41- 15007 Springfield\n","42- 15004 Keeler\n","43- 14958 Hamlin\n","44- 14949 Avers\n","45- 14941 Ridgeway\n","46- 14931-33 Pulaski\n","47- 14921 Springfield\n","48- 14909 Knox\n","49- 14827 Kildare\n","50- 14826 Keystone\n"],"hover_value":["4648 147th St.\n   ","3838 147th St.\n   ","3320 147th St.\n   ","14636 Pulaski\n    ","4050 147th St.\n   ","14840 Ketelaar\n   ","14736 Pulaski\n    ","14416 Homan\n      ","3834 147th St.\n   ","3832 147th St.\n   ","3433 147th St.\n   ","3316 147th St.\n   ","3249 147th St.\n   ","14821 Kilbourn\n   ","14726 Cicero\n     ","14652 Avers\n      ","14650 Waverly\n    ","14559 Sawyer\n     ","14541 Keating\n    ","14518 Tripp .\n    ","14458 Kedvale\n    ","14410 Karlov\n     ","14401 Cicero\n     ","4936 147th Ct.\n   ","4704 147th St\n    ","4660 147th St.\n   ","4438 150th St.\n   ","4344 147th St.\n   ","4222 147th St.\n   ","4039 147th St.\n   ","3930 151st Pl.\n   ","3905 153rd Pl.\n   ","3744 147th Pl.\n   ","3740 153rd Pl.\n   ","3652 153rd St.\n   ","3613 148th Pl.\n   ","3542 147th St.\n   ","15252 Millard\n    ","15229 Ridgeway\n   ","15225 Millard\n    ","15007 Springfield\n","15004 Keeler\n     ","14958 Hamlin\n     ","14949 Avers\n      ","14941 Ridgeway\n   ","14931-33 Pulaski\n ","14921 Springfield\n","14909 Knox\n       ","14827 Kildare\n    ","14826 Keystone\n   "],"hover_Freq":["10","10","10","10"," 8"," 8"," 8"," 8"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 6"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"," 4"]}}},{"type":"Circle","id":"944c7901cea4bcb49614cb7c301ee401","attributes":{"id":"944c7901cea4bcb49614cb7c301ee401","tags":[],"doc":null,"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"f15cd8b4346de8e7101a075d8280cedd","attributes":{"id":"f15cd8b4346de8e7101a075d8280cedd","tags":[],"doc":null,"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"ec16192373c0b98947448d3bb387e63a","attributes":{"id":"ec16192373c0b98947448d3bb387e63a","tags":[],"doc":null,"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"f15cd8b4346de8e7101a075d8280cedd"},"server_data_source":null,"name":null,"data_source":{"type":"ColumnDataSource","id":"66dec5e3904917ea52167795fd484ec3"},"glyph":{"type":"Circle","id":"944c7901cea4bcb49614cb7c301ee401"}}},{"type":"Range1d","id":"48772eeea989263a8622b1e0547edab9","attributes":{"id":"48772eeea989263a8622b1e0547edab9","tags":[],"doc":null,"start":3.58,"end":10.42}},{"type":"FactorRange","id":"22af7d396e1825c1d092803af2049ea2","attributes":{"id":"22af7d396e1825c1d092803af2049ea2","tags":[],"doc":null,"factors":["50- 14826 Keystone\n","49- 14827 Kildare\n","48- 14909 Knox\n","47- 14921 Springfield\n","46- 14931-33 Pulaski\n","45- 14941 Ridgeway\n","44- 14949 Avers\n","43- 14958 Hamlin\n","42- 15004 Keeler\n","41- 15007 Springfield\n","40- 15225 Millard\n","39- 15229 Ridgeway\n","38- 15252 Millard\n","37- 3542 147th St.\n","36- 3613 148th Pl.\n","35- 3652 153rd St.\n","34- 3740 153rd Pl.\n","33- 3744 147th Pl.\n","32- 3905 153rd Pl.\n","31- 3930 151st Pl.\n","30- 4039 147th St.\n","29- 4222 147th St.\n","28- 4344 147th St.\n","27- 4438 150th St.\n","26- 4660 147th St.\n","25- 4704 147th St\n","24- 4936 147th Ct.\n","23- 14401 Cicero\n","22- 14410 Karlov\n","21- 14458 Kedvale\n","20- 14518 Tripp .\n","19- 14541 Keating\n","18- 14559 Sawyer\n","17- 14650 Waverly\n","16- 14652 Avers\n","15- 14726 Cicero\n","14- 14821 Kilbourn\n","13- 3249 147th St.\n","12- 3316 147th St.\n","11- 3433 147th St.\n","10- 3832 147th St.\n","9- 3834 147th St.\n","8- 14416 Homan\n","7- 14736 Pulaski\n","6- 14840 Ketelaar\n","5- 4050 147th St.\n","4- 14636 Pulaski\n","3- 3320 147th St.\n","2- 3838 147th St.\n","1- 4648 147th St.\n"]}},{"type":"LinearAxis","id":"3c9197481fdb612460f6cca8b88f3468","attributes":{"id":"3c9197481fdb612460f6cca8b88f3468","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"axis_label":"Freq","formatter":{"type":"BasicTickFormatter","id":"25399e186bf5429b617f2e7303c28889"},"ticker":{"type":"BasicTicker","id":"0283a3433304ad59ba6a4a1c5595abd1"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"25399e186bf5429b617f2e7303c28889","attributes":{"id":"25399e186bf5429b617f2e7303c28889","tags":[],"doc":null}},{"type":"BasicTicker","id":"0283a3433304ad59ba6a4a1c5595abd1","attributes":{"id":"0283a3433304ad59ba6a4a1c5595abd1","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"c8f5b1160a368fc77b20ff9dfe91bfe0","attributes":{"id":"c8f5b1160a368fc77b20ff9dfe91bfe0","tags":[],"doc":null,"dimension":0,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"0283a3433304ad59ba6a4a1c5595abd1"}}},{"type":"CategoricalAxis","id":"f19b50aa03da2afe94c7823922c049dd","attributes":{"id":"f19b50aa03da2afe94c7823922c049dd","tags":[],"doc":null,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"axis_label":"","formatter":{"type":"CategoricalTickFormatter","id":"9e90526ad4b69e7bc9f9c96b0fceca10"},"ticker":{"type":"CategoricalTicker","id":"8eb6a0e84c47e91b7db300e85c5c6246"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"CategoricalTickFormatter","id":"9e90526ad4b69e7bc9f9c96b0fceca10","attributes":{"id":"9e90526ad4b69e7bc9f9c96b0fceca10","tags":[],"doc":null}},{"type":"CategoricalTicker","id":"8eb6a0e84c47e91b7db300e85c5c6246","attributes":{"id":"8eb6a0e84c47e91b7db300e85c5c6246","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"78ead6f30c454494bf7d328d4ecea6ff","attributes":{"id":"78ead6f30c454494bf7d328d4ecea6ff","tags":[],"doc":null,"dimension":1,"plot":{"type":"Plot","id":"4e868d0640716a9481ec09de11913536","subtype":"Figure"},"ticker":{"type":"CategoricalTicker","id":"8eb6a0e84c47e91b7db300e85c5c6246"}}}]},"evals":[]}</script></p>
+</div>
+<div id="frequency-table-of-top-100-variables" class="section level3">
+<h3>Frequency table of top 100 variables</h3>
+<p><div id="htmlwidget-298" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-298">{"x":{"data":[["4648 147th St.\n","3838 147th St.\n","3320 147th St.\n","14636 Pulaski\n","4050 147th St.\n","14840 Ketelaar\n","14736 Pulaski\n","14416 Homan\n","3834 147th St.\n","3832 147th St.\n","3433 147th St.\n","3316 147th St.\n","3249 147th St.\n","14821 Kilbourn\n","14726 Cicero\n","14652 Avers\n","14650 Waverly\n","14559 Sawyer\n","14541 Keating\n","14518 Tripp .\n","14458 Kedvale\n","14410 Karlov\n","14401 Cicero\n","4936 147th Ct.\n","4704 147th St\n","4660 147th St.\n","4438 150th St.\n","4344 147th St.\n","4222 147th St.\n","4039 147th St.\n","3930 151st Pl.\n","3905 153rd Pl.\n","3744 147th Pl.\n","3740 153rd Pl.\n","3652 153rd St.\n","3613 148th Pl.\n","3542 147th St.\n","15252 Millard\n","15229 Ridgeway\n","15225 Millard\n","15007 Springfield\n","15004 Keeler\n","14958 Hamlin\n","14949 Avers\n","14941 Ridgeway\n","14931-33 Pulaski\n","14921 Springfield\n","14909 Knox\n","14827 Kildare\n","14826 Keystone\n","14821 Clifton Pk\n","14812 Clifton Pk.\n","14808 Clifton Pk\n","14800 Kildare\n","14756 St. Louis\n","14748 Kilbourn\n","14747 Homan\n","14746 Trumbull\n","14651 Kolmar\n","14626 Keeler\n","14626 Harding\n","14624 Kenton\n","14601 LaPorte\n","14558 Tripp\n","14557 Keating\n","14544 Springfield\n","14541 Springfield\n","14541 Kolin\n","14535 Laporte\n","14526 Kedvale\n","14519 Turner\n","14506 Homan\n","14501 Keating\n","14501 Cicero\n","14453 Kostner\n","14426 Trumbull\n","14416 Abbottsford\n","14415 Lawndale\n","14409 Springfield\n","14406 Kedvale\n","14349 Keating\n","14301 Keystone\n","5531 Maple Ln.\n","5121 148th St.\n","5115 147th St.\n","5109 148Th St\n","5109 147th St.\n","5108 148th St.\n","5104 147th Ct.\n","4951 147th Ct.\n","4940 145th Ct\n","4937 145th St.\n","4935 147th Ct.\n","4925 144th Pl.\n","4913 144th St.\n","4901 144th St.\n","4740 147th St.\n","4722 147th St.Ste.7\n","4722 147th St. Ste 6\n","4722 147th St Ste 9\n"],[10,10,10,10,8,8,8,8,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>variable</th>\n      <th>Freq</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[]}</script></p>
+</div>
+</div>
+<div id="permit_no_or_type" class="section level2">
+<h2>permit_no_or_type</h2>
+<div id="distribution" class="section level3">
+<h3>Distribution</h3>
+<p><div id="htmlwidget-8312" style="width:750px;height:544px;" class="rbokeh"></div>
+<script type="application/json" data-for="htmlwidget-8312">{"x":{"elementid":"419e29fafd1cc23ec99fb629baa1e331","modeltype":"Plot","modelid":"41cefc92c1815d2412b634c98cec5483","padding":{"type":"figure","y_pad":10,"x_pad":46},"all_models":[{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","attributes":{"title":null,"id":"41cefc92c1815d2412b634c98cec5483","plot_width":740,"plot_height":498,"x_range":{"type":"Range1d","id":"8107070a833dcf3780cc97a8c9dd3b69"},"y_range":{"type":"FactorRange","id":"f9d859a7a454aa03cf4df828b4c13858"},"left":[{"type":"CategoricalAxis","id":"88ce21d2056ec6c53decf51966a409da"}],"below":[{"type":"LinearAxis","id":"a5945345ef5c78bd671a721a84fcf337"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"e11727e9ccb9d7bb43ffc30e8f10b5f0"},{"type":"LinearAxis","id":"a5945345ef5c78bd671a721a84fcf337"},{"type":"Grid","id":"9fc69295371a4671e2942c52d7a3042f"},{"type":"CategoricalAxis","id":"88ce21d2056ec6c53decf51966a409da"},{"type":"Grid","id":"e694537c68e1dfac40f86daa0b4f1598"}],"tools":[{"type":"PanTool","id":"1ccfb0a403267f3f9b895bb5a345dab0"},{"type":"WheelZoomTool","id":"1b2360bdc30234aeeeaaf0493f6fdebf"},{"type":"BoxZoomTool","id":"0bc6a8ea627db875c53fb47aa2056191"},{"type":"ResizeTool","id":"c08b0841d5808f3015ebea5f8044e50f"},{"type":"ResetTool","id":"0bf9126cb3f06df013fb12c12a465f95"},{"type":"PreviewSaveTool","id":"e5ef69512a63c2503b9c427f2c206a22"},{"type":"HelpTool","id":"f14633dbf7619c67736b2f87281e9bf5"},{"type":"HoverTool","id":"a27a1166c47286de4e0713a2a95a98f6"}],"tool_events":{"type":"ToolEvents","id":"8789fd4adc93caea265170b5523e2440"},"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"doc":null,"min_border":4,"lod_threshold":null},"subtype":"Figure"},{"type":"PanTool","id":"1ccfb0a403267f3f9b895bb5a345dab0","attributes":{"id":"1ccfb0a403267f3f9b895bb5a345dab0","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"ToolEvents","id":"8789fd4adc93caea265170b5523e2440","attributes":{"id":"8789fd4adc93caea265170b5523e2440","tags":[],"doc":null},"geometries":[]},{"type":"WheelZoomTool","id":"1b2360bdc30234aeeeaaf0493f6fdebf","attributes":{"id":"1b2360bdc30234aeeeaaf0493f6fdebf","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"BoxZoomTool","id":"0bc6a8ea627db875c53fb47aa2056191","attributes":{"id":"0bc6a8ea627db875c53fb47aa2056191","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"}}},{"type":"ResizeTool","id":"c08b0841d5808f3015ebea5f8044e50f","attributes":{"id":"c08b0841d5808f3015ebea5f8044e50f","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"}}},{"type":"ResetTool","id":"0bf9126cb3f06df013fb12c12a465f95","attributes":{"id":"0bf9126cb3f06df013fb12c12a465f95","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"}}},{"type":"PreviewSaveTool","id":"e5ef69512a63c2503b9c427f2c206a22","attributes":{"id":"e5ef69512a63c2503b9c427f2c206a22","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"}}},{"type":"HelpTool","id":"f14633dbf7619c67736b2f87281e9bf5","attributes":{"id":"f14633dbf7619c67736b2f87281e9bf5","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"redirect":["http://hafen.github.io/rbokeh"],"help_tooltip":["Click to learn more about rbokeh."]}},{"type":"HoverTool","id":"a27a1166c47286de4e0713a2a95a98f6","attributes":{"id":"a27a1166c47286de4e0713a2a95a98f6","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"e11727e9ccb9d7bb43ffc30e8f10b5f0"}],"names":[],"always_active":true,"tooltips":[["value","@hover_value"],["Freq","@hover_Freq"]]}},{"type":"ColumnDataSource","id":"b03b57948e371c4afcdc08a61f50f730","attributes":{"id":"b03b57948e371c4afcdc08a61f50f730","tags":[],"doc":null,"column_names":["x","y","hover_value","hover_Freq"],"selected":[],"discrete_ranges":{},"cont_ranges":{},"data":{"x":[368,274,176,94,66,66,54,34,24,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"y":["1- Misc.","2- Roof","3- Electrical","4- Fence","5- Plumbing","6- Inspection","7- Sign","8- Remodel","9- Pool","10- Dumpster","11- House Repair","12- Fire Repair","13- Build-out","14- Build Out","15- 3735 A","16- 3734 B","17- 3734 A","18- 3733B","19- 3733A","20- 3732 B","21- 3731B","22- 3730B","23- 3730A","24- 3729B","25- 3728B","26- 3728 A","27- 3727B","28- 3726 B","29- 3726 A","30- 3725B","31- 3725A","32- 3724 B","33- 3723B","34- 3722B","35- 3722 A","36- 3721A","37- 3721 B"],"hover_value":["Misc.       ","Roof        ","Electrical  ","Fence       ","Plumbing    ","Inspection  ","Sign        ","Remodel     ","Pool        ","Dumpster    ","House Repair","Fire Repair ","Build-out   ","Build Out   ","3735 A      ","3734 B      ","3734 A      ","3733B       ","3733A       ","3732 B      ","3731B       ","3730B       ","3730A       ","3729B       ","3728B       ","3728 A      ","3727B       ","3726 B      ","3726 A      ","3725B       ","3725A       ","3724 B      ","3723B       ","3722B       ","3722 A      ","3721A       ","3721 B      "],"hover_Freq":["368","274","176"," 94"," 66"," 66"," 54"," 34"," 24","  6","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2","  2"]}}},{"type":"Circle","id":"3fc6e37074b1a8e9740221a05758b26c","attributes":{"id":"3fc6e37074b1a8e9740221a05758b26c","tags":[],"doc":null,"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"26274c00a798d62f8fc37828134b3727","attributes":{"id":"26274c00a798d62f8fc37828134b3727","tags":[],"doc":null,"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"e11727e9ccb9d7bb43ffc30e8f10b5f0","attributes":{"id":"e11727e9ccb9d7bb43ffc30e8f10b5f0","tags":[],"doc":null,"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"26274c00a798d62f8fc37828134b3727"},"server_data_source":null,"name":null,"data_source":{"type":"ColumnDataSource","id":"b03b57948e371c4afcdc08a61f50f730"},"glyph":{"type":"Circle","id":"3fc6e37074b1a8e9740221a05758b26c"}}},{"type":"Range1d","id":"8107070a833dcf3780cc97a8c9dd3b69","attributes":{"id":"8107070a833dcf3780cc97a8c9dd3b69","tags":[],"doc":null,"start":-23.62,"end":393.62}},{"type":"FactorRange","id":"f9d859a7a454aa03cf4df828b4c13858","attributes":{"id":"f9d859a7a454aa03cf4df828b4c13858","tags":[],"doc":null,"factors":["37- 3721 B","36- 3721A","35- 3722 A","34- 3722B","33- 3723B","32- 3724 B","31- 3725A","30- 3725B","29- 3726 A","28- 3726 B","27- 3727B","26- 3728 A","25- 3728B","24- 3729B","23- 3730A","22- 3730B","21- 3731B","20- 3732 B","19- 3733A","18- 3733B","17- 3734 A","16- 3734 B","15- 3735 A","14- Build Out","13- Build-out","12- Fire Repair","11- House Repair","10- Dumpster","9- Pool","8- Remodel","7- Sign","6- Inspection","5- Plumbing","4- Fence","3- Electrical","2- Roof","1- Misc."]}},{"type":"LinearAxis","id":"a5945345ef5c78bd671a721a84fcf337","attributes":{"id":"a5945345ef5c78bd671a721a84fcf337","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"axis_label":"Freq","formatter":{"type":"BasicTickFormatter","id":"e08fe097b50dcca0210b21c04479a2e9"},"ticker":{"type":"BasicTicker","id":"fd5b6b8511e78c80c18b04b4edde6c34"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"e08fe097b50dcca0210b21c04479a2e9","attributes":{"id":"e08fe097b50dcca0210b21c04479a2e9","tags":[],"doc":null}},{"type":"BasicTicker","id":"fd5b6b8511e78c80c18b04b4edde6c34","attributes":{"id":"fd5b6b8511e78c80c18b04b4edde6c34","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"9fc69295371a4671e2942c52d7a3042f","attributes":{"id":"9fc69295371a4671e2942c52d7a3042f","tags":[],"doc":null,"dimension":0,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"fd5b6b8511e78c80c18b04b4edde6c34"}}},{"type":"CategoricalAxis","id":"88ce21d2056ec6c53decf51966a409da","attributes":{"id":"88ce21d2056ec6c53decf51966a409da","tags":[],"doc":null,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"axis_label":"","formatter":{"type":"CategoricalTickFormatter","id":"0c39d24bc4f22756f7d1dd2adf2ef19e"},"ticker":{"type":"CategoricalTicker","id":"a2373a92e3f18f71bddab4914cd486b9"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"CategoricalTickFormatter","id":"0c39d24bc4f22756f7d1dd2adf2ef19e","attributes":{"id":"0c39d24bc4f22756f7d1dd2adf2ef19e","tags":[],"doc":null}},{"type":"CategoricalTicker","id":"a2373a92e3f18f71bddab4914cd486b9","attributes":{"id":"a2373a92e3f18f71bddab4914cd486b9","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"e694537c68e1dfac40f86daa0b4f1598","attributes":{"id":"e694537c68e1dfac40f86daa0b4f1598","tags":[],"doc":null,"dimension":1,"plot":{"type":"Plot","id":"41cefc92c1815d2412b634c98cec5483","subtype":"Figure"},"ticker":{"type":"CategoricalTicker","id":"a2373a92e3f18f71bddab4914cd486b9"}}}]},"evals":[]}</script></p>
+</div>
+<div id="frequency-table" class="section level3">
+<h3>Frequency table</h3>
+<p><div id="htmlwidget-5604" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-5604">{"x":{"data":[["Misc.","Roof","Electrical","Fence","Plumbing","Inspection","Sign","Remodel","Pool","Dumpster","House Repair","Fire Repair","Build-out","Build Out","3735 A","3734 B","3734 A","3733B","3733A","3732 B","3731B","3730B","3730A","3729B","3728B","3728 A","3727B","3726 B","3726 A","3725B","3725A","3724 B","3723B","3722B","3722 A","3721A","3721 B"],[368,274,176,94,66,66,54,34,24,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>variable</th>\n      <th>Freq</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[]}</script></p>
+</div>
+</div>
+<div id="date_permit_issued" class="section level2">
+<h2>date_permit_issued</h2>
+<div id="distribution-of-top-50-variables-1" class="section level3">
+<h3>Distribution of top 50 variables</h3>
+<p><div id="htmlwidget-5585" style="width:750px;height:700px;" class="rbokeh"></div>
+<script type="application/json" data-for="htmlwidget-5585">{"x":{"elementid":"709f4faa04e34c44a63e693d2a095f59","modeltype":"Plot","modelid":"2e650255cf11021d95a802d4f08b5f92","padding":{"type":"figure","y_pad":10,"x_pad":46},"all_models":[{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","attributes":{"title":null,"id":"2e650255cf11021d95a802d4f08b5f92","plot_width":740,"plot_height":654,"x_range":{"type":"Range1d","id":"3bf604c8c1f1dd977de2148a56cdef0b"},"y_range":{"type":"FactorRange","id":"3a81d93bce8a915e1893957dc9572b2a"},"left":[{"type":"CategoricalAxis","id":"e094150148eb7a0311ec555c01d54e09"}],"below":[{"type":"LinearAxis","id":"b47e1f20d2a56d16c11154a952bd4856"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"640a78b1b3701c6ff4301dfbe0d10ea5"},{"type":"LinearAxis","id":"b47e1f20d2a56d16c11154a952bd4856"},{"type":"Grid","id":"4174c0a7e2334d94f4789a74e0f7a2c6"},{"type":"CategoricalAxis","id":"e094150148eb7a0311ec555c01d54e09"},{"type":"Grid","id":"1098d8459fbebd4372ef22c4c31a1f29"}],"tools":[{"type":"PanTool","id":"ecaa19bc11295e387c98aa391a5f1fc1"},{"type":"WheelZoomTool","id":"a63b0e83e2af9f097555d29cd9588054"},{"type":"BoxZoomTool","id":"bf67edc3c8ffa3def76939fc8afa99db"},{"type":"ResizeTool","id":"e8d951a2b628d26f85584787efcc9842"},{"type":"ResetTool","id":"460c5fbb7843a44748cffd4e92a0a19f"},{"type":"PreviewSaveTool","id":"ddf16ef0c145db19e8965f579b25f854"},{"type":"HelpTool","id":"44f3397beaa01e2c40ccf27a8a3eaf58"},{"type":"HoverTool","id":"59f9295e7bc9dcd3d41ee5a51b765012"}],"tool_events":{"type":"ToolEvents","id":"c6ab7c3e6e7bc196377d56ffbe7c2e1a"},"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"doc":null,"min_border":4,"lod_threshold":null},"subtype":"Figure"},{"type":"PanTool","id":"ecaa19bc11295e387c98aa391a5f1fc1","attributes":{"id":"ecaa19bc11295e387c98aa391a5f1fc1","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"ToolEvents","id":"c6ab7c3e6e7bc196377d56ffbe7c2e1a","attributes":{"id":"c6ab7c3e6e7bc196377d56ffbe7c2e1a","tags":[],"doc":null},"geometries":[]},{"type":"WheelZoomTool","id":"a63b0e83e2af9f097555d29cd9588054","attributes":{"id":"a63b0e83e2af9f097555d29cd9588054","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"dimensions":["width","height"]}},{"type":"BoxZoomTool","id":"bf67edc3c8ffa3def76939fc8afa99db","attributes":{"id":"bf67edc3c8ffa3def76939fc8afa99db","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"}}},{"type":"ResizeTool","id":"e8d951a2b628d26f85584787efcc9842","attributes":{"id":"e8d951a2b628d26f85584787efcc9842","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"}}},{"type":"ResetTool","id":"460c5fbb7843a44748cffd4e92a0a19f","attributes":{"id":"460c5fbb7843a44748cffd4e92a0a19f","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"}}},{"type":"PreviewSaveTool","id":"ddf16ef0c145db19e8965f579b25f854","attributes":{"id":"ddf16ef0c145db19e8965f579b25f854","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"}}},{"type":"HelpTool","id":"44f3397beaa01e2c40ccf27a8a3eaf58","attributes":{"id":"44f3397beaa01e2c40ccf27a8a3eaf58","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"redirect":["http://hafen.github.io/rbokeh"],"help_tooltip":["Click to learn more about rbokeh."]}},{"type":"HoverTool","id":"59f9295e7bc9dcd3d41ee5a51b765012","attributes":{"id":"59f9295e7bc9dcd3d41ee5a51b765012","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"640a78b1b3701c6ff4301dfbe0d10ea5"}],"names":[],"always_active":true,"tooltips":[["value","@hover_value"],["Freq","@hover_Freq"]]}},{"type":"ColumnDataSource","id":"7158169534023b50b4b35b0335c8dc2a","attributes":{"id":"7158169534023b50b4b35b0335c8dc2a","tags":[],"doc":null,"column_names":["x","y","hover_value","hover_Freq"],"selected":[],"discrete_ranges":{},"cont_ranges":{},"data":{"x":[16,16,14,14,14,14,14,14,14,12,12,12,12,12,12,12,12,12,12,12,10,10,10,10,10,10,10,10,10,10,10,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8],"y":["1- 2012-08-27T00_00_00","2- 2012-08-15T00_00_00","3- 2012-06-11T00_00_00","4- 2012-05-23T00_00_00","5- 2012-05-09T00_00_00","6- 2012-04-13T00_00_00","7- 2012-04-09T00_00_00","8- 2012-03-06T00_00_00","9- 2011-09-22T00_00_00","10- 2012-06-25T00_00_00","11- 2012-06-07T00_00_00","12- 2012-06-04T00_00_00","13- 2012-05-24T00_00_00","14- 2012-05-21T00_00_00","15- 2012-04-25T00_00_00","16- 2012-04-17T00_00_00","17- 2012-03-21T00_00_00","18- 2011-11-17T00_00_00","19- 2011-10-20T00_00_00","20- 2011-09-30T00_00_00","21- 2012-07-25T00_00_00","22- 2012-07-13T00_00_00","23- 2012-07-12T00_00_00","24- 2012-06-01T00_00_00","25- 2012-03-22T00_00_00","26- 2012-03-05T00_00_00","27- 2011-11-02T00_00_00","28- 2011-10-31T00_00_00","29- 2011-10-18T00_00_00","30- 2011-10-11T00_00_00","31- 2011-10-07T00_00_00","32- 2012-08-28T00_00_00","33- 2012-08-21T00_00_00","34- 2012-08-10T00_00_00","35- 2012-08-07T00_00_00","36- 2012-08-06T00_00_00","37- 2012-08-01T00_00_00","38- 2012-07-18T00_00_00","39- 2012-07-02T00_00_00","40- 2012-06-19T00_00_00","41- 2012-06-18T00_00_00","42- 2012-06-13T00_00_00","43- 2012-05-29T00_00_00","44- 2012-05-14T00_00_00","45- 2012-05-08T00_00_00","46- 2012-05-04T00_00_00","47- 2012-04-26T00_00_00","48- 2012-04-12T00_00_00","49- 2012-04-11T00_00_00","50- 2012-04-10T00_00_00"],"hover_value":["2012-08-27T00:00:00","2012-08-15T00:00:00","2012-06-11T00:00:00","2012-05-23T00:00:00","2012-05-09T00:00:00","2012-04-13T00:00:00","2012-04-09T00:00:00","2012-03-06T00:00:00","2011-09-22T00:00:00","2012-06-25T00:00:00","2012-06-07T00:00:00","2012-06-04T00:00:00","2012-05-24T00:00:00","2012-05-21T00:00:00","2012-04-25T00:00:00","2012-04-17T00:00:00","2012-03-21T00:00:00","2011-11-17T00:00:00","2011-10-20T00:00:00","2011-09-30T00:00:00","2012-07-25T00:00:00","2012-07-13T00:00:00","2012-07-12T00:00:00","2012-06-01T00:00:00","2012-03-22T00:00:00","2012-03-05T00:00:00","2011-11-02T00:00:00","2011-10-31T00:00:00","2011-10-18T00:00:00","2011-10-11T00:00:00","2011-10-07T00:00:00","2012-08-28T00:00:00","2012-08-21T00:00:00","2012-08-10T00:00:00","2012-08-07T00:00:00","2012-08-06T00:00:00","2012-08-01T00:00:00","2012-07-18T00:00:00","2012-07-02T00:00:00","2012-06-19T00:00:00","2012-06-18T00:00:00","2012-06-13T00:00:00","2012-05-29T00:00:00","2012-05-14T00:00:00","2012-05-08T00:00:00","2012-05-04T00:00:00","2012-04-26T00:00:00","2012-04-12T00:00:00","2012-04-11T00:00:00","2012-04-10T00:00:00"],"hover_Freq":["16","16","14","14","14","14","14","14","14","12","12","12","12","12","12","12","12","12","12","12","10","10","10","10","10","10","10","10","10","10","10"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"," 8"]}}},{"type":"Circle","id":"a3e31cfa928cffede4b7bc29325740ed","attributes":{"id":"a3e31cfa928cffede4b7bc29325740ed","tags":[],"doc":null,"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"65b5557b64fda5eda3eb4e22852d975c","attributes":{"id":"65b5557b64fda5eda3eb4e22852d975c","tags":[],"doc":null,"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"640a78b1b3701c6ff4301dfbe0d10ea5","attributes":{"id":"640a78b1b3701c6ff4301dfbe0d10ea5","tags":[],"doc":null,"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"65b5557b64fda5eda3eb4e22852d975c"},"server_data_source":null,"name":null,"data_source":{"type":"ColumnDataSource","id":"7158169534023b50b4b35b0335c8dc2a"},"glyph":{"type":"Circle","id":"a3e31cfa928cffede4b7bc29325740ed"}}},{"type":"Range1d","id":"3bf604c8c1f1dd977de2148a56cdef0b","attributes":{"id":"3bf604c8c1f1dd977de2148a56cdef0b","tags":[],"doc":null,"start":7.44,"end":16.56}},{"type":"FactorRange","id":"3a81d93bce8a915e1893957dc9572b2a","attributes":{"id":"3a81d93bce8a915e1893957dc9572b2a","tags":[],"doc":null,"factors":["50- 2012-04-10T00_00_00","49- 2012-04-11T00_00_00","48- 2012-04-12T00_00_00","47- 2012-04-26T00_00_00","46- 2012-05-04T00_00_00","45- 2012-05-08T00_00_00","44- 2012-05-14T00_00_00","43- 2012-05-29T00_00_00","42- 2012-06-13T00_00_00","41- 2012-06-18T00_00_00","40- 2012-06-19T00_00_00","39- 2012-07-02T00_00_00","38- 2012-07-18T00_00_00","37- 2012-08-01T00_00_00","36- 2012-08-06T00_00_00","35- 2012-08-07T00_00_00","34- 2012-08-10T00_00_00","33- 2012-08-21T00_00_00","32- 2012-08-28T00_00_00","31- 2011-10-07T00_00_00","30- 2011-10-11T00_00_00","29- 2011-10-18T00_00_00","28- 2011-10-31T00_00_00","27- 2011-11-02T00_00_00","26- 2012-03-05T00_00_00","25- 2012-03-22T00_00_00","24- 2012-06-01T00_00_00","23- 2012-07-12T00_00_00","22- 2012-07-13T00_00_00","21- 2012-07-25T00_00_00","20- 2011-09-30T00_00_00","19- 2011-10-20T00_00_00","18- 2011-11-17T00_00_00","17- 2012-03-21T00_00_00","16- 2012-04-17T00_00_00","15- 2012-04-25T00_00_00","14- 2012-05-21T00_00_00","13- 2012-05-24T00_00_00","12- 2012-06-04T00_00_00","11- 2012-06-07T00_00_00","10- 2012-06-25T00_00_00","9- 2011-09-22T00_00_00","8- 2012-03-06T00_00_00","7- 2012-04-09T00_00_00","6- 2012-04-13T00_00_00","5- 2012-05-09T00_00_00","4- 2012-05-23T00_00_00","3- 2012-06-11T00_00_00","2- 2012-08-15T00_00_00","1- 2012-08-27T00_00_00"]}},{"type":"LinearAxis","id":"b47e1f20d2a56d16c11154a952bd4856","attributes":{"id":"b47e1f20d2a56d16c11154a952bd4856","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"axis_label":"Freq","formatter":{"type":"BasicTickFormatter","id":"7e2b9bed51b8854be43148def33ea852"},"ticker":{"type":"BasicTicker","id":"9b0976437a124950f3861df2ab666a87"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"7e2b9bed51b8854be43148def33ea852","attributes":{"id":"7e2b9bed51b8854be43148def33ea852","tags":[],"doc":null}},{"type":"BasicTicker","id":"9b0976437a124950f3861df2ab666a87","attributes":{"id":"9b0976437a124950f3861df2ab666a87","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"4174c0a7e2334d94f4789a74e0f7a2c6","attributes":{"id":"4174c0a7e2334d94f4789a74e0f7a2c6","tags":[],"doc":null,"dimension":0,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"9b0976437a124950f3861df2ab666a87"}}},{"type":"CategoricalAxis","id":"e094150148eb7a0311ec555c01d54e09","attributes":{"id":"e094150148eb7a0311ec555c01d54e09","tags":[],"doc":null,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"axis_label":"","formatter":{"type":"CategoricalTickFormatter","id":"c2c5273c398779a91d60da9501f494c8"},"ticker":{"type":"CategoricalTicker","id":"fad7315963a23739bfe50e3f5c4d3fea"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"CategoricalTickFormatter","id":"c2c5273c398779a91d60da9501f494c8","attributes":{"id":"c2c5273c398779a91d60da9501f494c8","tags":[],"doc":null}},{"type":"CategoricalTicker","id":"fad7315963a23739bfe50e3f5c4d3fea","attributes":{"id":"fad7315963a23739bfe50e3f5c4d3fea","tags":[],"doc":null,"num_minor_ticks":5}},{"type":"Grid","id":"1098d8459fbebd4372ef22c4c31a1f29","attributes":{"id":"1098d8459fbebd4372ef22c4c31a1f29","tags":[],"doc":null,"dimension":1,"plot":{"type":"Plot","id":"2e650255cf11021d95a802d4f08b5f92","subtype":"Figure"},"ticker":{"type":"CategoricalTicker","id":"fad7315963a23739bfe50e3f5c4d3fea"}}}]},"evals":[]}</script></p>
+</div>
+<div id="frequency-table-of-top-100-variables-1" class="section level3">
+<h3>Frequency table of top 100 variables</h3>
+<p><div id="htmlwidget-2743" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-2743">{"x":{"data":[["2012-08-27T00:00:00","2012-08-15T00:00:00","2012-06-11T00:00:00","2012-05-23T00:00:00","2012-05-09T00:00:00","2012-04-13T00:00:00","2012-04-09T00:00:00","2012-03-06T00:00:00","2011-09-22T00:00:00","2012-06-25T00:00:00","2012-06-07T00:00:00","2012-06-04T00:00:00","2012-05-24T00:00:00","2012-05-21T00:00:00","2012-04-25T00:00:00","2012-04-17T00:00:00","2012-03-21T00:00:00","2011-11-17T00:00:00","2011-10-20T00:00:00","2011-09-30T00:00:00","2012-07-25T00:00:00","2012-07-13T00:00:00","2012-07-12T00:00:00","2012-06-01T00:00:00","2012-03-22T00:00:00","2012-03-05T00:00:00","2011-11-02T00:00:00","2011-10-31T00:00:00","2011-10-18T00:00:00","2011-10-11T00:00:00","2011-10-07T00:00:00","2012-08-28T00:00:00","2012-08-21T00:00:00","2012-08-10T00:00:00","2012-08-07T00:00:00","2012-08-06T00:00:00","2012-08-01T00:00:00","2012-07-18T00:00:00","2012-07-02T00:00:00","2012-06-19T00:00:00","2012-06-18T00:00:00","2012-06-13T00:00:00","2012-05-29T00:00:00","2012-05-14T00:00:00","2012-05-08T00:00:00","2012-05-04T00:00:00","2012-04-26T00:00:00","2012-04-12T00:00:00","2012-04-11T00:00:00","2012-04-10T00:00:00","2012-02-13T00:00:00","2012-01-25T00:00:00","2012-01-03T00:00:00","2011-12-09T00:00:00","2011-11-16T00:00:00","2011-10-14T00:00:00","2011-10-06T00:00:00","2011-10-05T00:00:00","2011-09-23T00:00:00","2011-09-14T00:00:00","2011-09-07T00:00:00","2012-08-24T00:00:00","2012-08-22T00:00:00","2012-08-13T00:00:00","2012-08-02T00:00:00","2012-07-27T00:00:00","2012-07-24T00:00:00","2012-07-23T00:00:00","2012-07-20T00:00:00","2012-07-17T00:00:00","2012-07-11T00:00:00","2012-07-06T00:00:00","2012-07-05T00:00:00","2012-06-29T00:00:00","2012-06-20T00:00:00","2012-06-15T00:00:00","2012-06-14T00:00:00","2012-06-12T00:00:00","2012-06-08T00:00:00","2012-05-25T00:00:00","2012-05-18T00:00:00","2012-04-23T00:00:00","2012-04-19T00:00:00","2012-04-18T00:00:00","2012-04-16T00:00:00","2012-04-04T00:00:00","2012-03-27T00:00:00","2012-03-26T00:00:00","2012-03-23T00:00:00","2012-03-19T00:00:00","2012-02-08T00:00:00","2012-02-07T00:00:00","2012-01-19T00:00:00","2011-12-19T00:00:00","2011-12-12T00:00:00","2011-12-06T00:00:00","2011-11-23T00:00:00","2011-11-14T00:00:00","2011-11-09T00:00:00","2011-11-01T00:00:00"],[16,16,14,14,14,14,14,14,14,12,12,12,12,12,12,12,12,12,12,12,10,10,10,10,10,10,10,10,10,10,10,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>variable</th>\n      <th>Freq</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":1}],"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[]}</script></p>
+</div>
+</div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <div class="col-md-6">
+              </div>
+      <div class="col-md-6">
+        <p class="pull-right">created with <a href="https://github.com/hafen/packagedocs">packagedocs</a></p>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

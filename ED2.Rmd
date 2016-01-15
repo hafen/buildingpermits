@@ -1,0 +1,569 @@
+---
+title: "Housing Permit Data Summary: ED2"
+author: Ryan Hafen
+output:
+  packagedocs:
+    toc: true
+    css: menu-fix.css
+navpills: |
+  <li class=''><a href="index.html">All Datasets</a></li>
+  <li role="presentation" class="dropdown active">
+  <a id="study-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">Dataset (ED2)<span class="caret"></span></a>
+  <ul id="menu1" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="study-drop">
+  <li class=''><a href='BOS1.html'>BOS1</a></li>
+  <li class=''><a href='BOS2.html'>BOS2</a></li>
+  <li class=''><a href='CHI1.html'>CHI1</a></li>
+  <li class=''><a href='ED1.html'>ED1</a></li>
+  <li class='active'><a href='ED2.html'>ED2</a></li>
+  <li class=''><a href='IL1.html'>IL1</a></li>
+  <li class=''><a href='IL2.html'>IL2</a></li>
+  <li class=''><a href='MD1.html'>MD1</a></li>
+  <li class=''><a href='MD2.html'>MD2</a></li>
+  <li class=''><a href='MD3.html'>MD3</a></li>
+  <li class=''><a href='MD4.html'>MD4</a></li>
+  <li class=''><a href='MD5.html'>MD5</a></li>
+  <li class=''><a href='MD6.html'>MD6</a></li>
+  <li class=''><a href='MO1.html'>MO1</a></li>
+  <li class=''><a href='MO2.html'>MO2</a></li>
+  <li class=''><a href='MO3.html'>MO3</a></li>
+  <li class=''><a href='MO4.html'>MO4</a></li>
+  <li class=''><a href='MO5.html'>MO5</a></li>
+  <li class=''><a href='MO6.html'>MO6</a></li>
+  <li class=''><a href='MO7.html'>MO7</a></li>
+  <li class=''><a href='NO1.html'>NO1</a></li>
+  <li class=''><a href='NO2.html'>NO2</a></li>
+  <li class=''><a href='NYC2.html'>NYC2</a></li>
+  <li class=''><a href='SEA1.html'>SEA1</a></li>
+  <li class=''><a href='SEA2.html'>SEA2</a></li>
+  <li class=''><a href='WA.html'>WA</a></li>
+  </ul>
+  </li>
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(rbokeh)
+library(knitr)
+load("/var/folders/n4/6ztyqms165s3r_4n001n1y6m0000gn/T//RtmpvNpZPH/file421b62b21e11")
+```
+
+
+```{r echo=FALSE, results='asis'}
+if(!is.null(di$meta)) {
+  nms <- names(di$meta)
+  tmpdf <- data.frame(
+    v1 = gsub("_", " ", nms),
+    v2 = unname(unlist(di$meta)))
+
+  txt <- c("# Meta #", "",
+    "|  property  |  value  |",
+    "| ---------- | ------- |",
+    apply(tmpdf, 1, function(x) {
+      paste("|", paste(x, collapse = " | "), "|")}))
+
+  cat(paste(txt, collapse = "\n"))
+}
+```
+
+# Sample #
+
+```{r echo=FALSE}
+di$head
+```
+
+# Missing Values #
+
+```{r echo=FALSE, message=FALSE}
+plot_missing(di)
+```
+
+# Variables #
+
+<!--
+
+```{r echo=FALSE, results='asis'}
+vartab <- data.frame(variable = names(di$var_summ), type = unname(sapply(di$var_summ, function(x) x$type)))
+knitr::kable(vartab)
+```
+-->
+
+```{r echo=FALSE, results='asis'}
+txt <- ""
+if(length(di$na_cols) > 0)
+ txt <- c(paste0("The following variables are all NA: `",
+  paste0(names(di$na_cols), collapse = "`, `"), "`"), "")
+
+if(length(di$dups) > 0) {
+  txt <- c(txt, "The following variables are duplicates:", "",
+    sapply(di$dups, function(x) {
+      paste0("- `", paste0(x, collapse = "`, `"), "`")
+    }), "")
+
+cat(paste(txt, collapse = "\n"))
+}
+```
+
+## city_sector ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["city_sector"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## mobile_units_demolished ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["mobile_units_demolished"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## duplex_units_2_per_structure ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["duplex_units_2_per_structure"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## multi_family_units_demolished ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["multi_family_units_demolished"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## row_housing_units ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["row_housing_units"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## net_units ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["net_units"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## number_of_additions ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["number_of_additions"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## year ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["year"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## ward ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["ward"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## typology ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["typology"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## neighbourhood ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["neighbourhood"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## foundation_structure_permits ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["foundation_structure_permits"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## apartment_units ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["apartment_units"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## interior_exterior_alterations_primary_building_incl_decks ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["interior_exterior_alterations_primary_building_incl_decks"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## accessory_buildings_demolished ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["accessory_buildings_demolished"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## garage_suites ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["garage_suites"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## ss_demolished ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["ss_demolished"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## single_detached_not_incl_ss ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["single_detached_not_incl_ss"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## accessory_buildings_new_and_alterations ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["accessory_buildings_new_and_alterations"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## ss_built_with_new_units ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["ss_built_with_new_units"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## garden_suites ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["garden_suites"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## number_of_permits ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["number_of_permits"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## neighbourhood_number ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["neighbourhood_number"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## semi_detached_units_2_per_structure ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["semi_detached_units_2_per_structure"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## mobile_home_units ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["mobile_home_units"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## multi_family_added_suites_conversions ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["multi_family_added_suites_conversions"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## total_construction_value ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["total_construction_value"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## single_secondary_suites_ss ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["single_secondary_suites_ss"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## traffic_district ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["traffic_district"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## hot_tubs_pools ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["hot_tubs_pools"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## single_units_demolished ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["single_units_demolished"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```

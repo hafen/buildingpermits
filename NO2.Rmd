@@ -1,0 +1,752 @@
+---
+title: "Housing Permit Data Summary: NO2"
+author: Ryan Hafen
+output:
+  packagedocs:
+    toc: true
+    css: menu-fix.css
+navpills: |
+  <li class=''><a href="index.html">All Datasets</a></li>
+  <li role="presentation" class="dropdown active">
+  <a id="study-drop" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">Dataset (NO2)<span class="caret"></span></a>
+  <ul id="menu1" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="study-drop">
+  <li class=''><a href='BOS1.html'>BOS1</a></li>
+  <li class=''><a href='BOS2.html'>BOS2</a></li>
+  <li class=''><a href='CHI1.html'>CHI1</a></li>
+  <li class=''><a href='ED1.html'>ED1</a></li>
+  <li class=''><a href='ED2.html'>ED2</a></li>
+  <li class=''><a href='IL1.html'>IL1</a></li>
+  <li class=''><a href='IL2.html'>IL2</a></li>
+  <li class=''><a href='MD1.html'>MD1</a></li>
+  <li class=''><a href='MD2.html'>MD2</a></li>
+  <li class=''><a href='MD3.html'>MD3</a></li>
+  <li class=''><a href='MD4.html'>MD4</a></li>
+  <li class=''><a href='MD5.html'>MD5</a></li>
+  <li class=''><a href='MD6.html'>MD6</a></li>
+  <li class=''><a href='MO1.html'>MO1</a></li>
+  <li class=''><a href='MO2.html'>MO2</a></li>
+  <li class=''><a href='MO3.html'>MO3</a></li>
+  <li class=''><a href='MO4.html'>MO4</a></li>
+  <li class=''><a href='MO5.html'>MO5</a></li>
+  <li class=''><a href='MO6.html'>MO6</a></li>
+  <li class=''><a href='MO7.html'>MO7</a></li>
+  <li class=''><a href='NO1.html'>NO1</a></li>
+  <li class='active'><a href='NO2.html'>NO2</a></li>
+  <li class=''><a href='NYC2.html'>NYC2</a></li>
+  <li class=''><a href='SEA1.html'>SEA1</a></li>
+  <li class=''><a href='SEA2.html'>SEA2</a></li>
+  <li class=''><a href='WA.html'>WA</a></li>
+  </ul>
+  </li>
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(rbokeh)
+library(knitr)
+load("/var/folders/n4/6ztyqms165s3r_4n001n1y6m0000gn/T//RtmpvNpZPH/file421b6785ba25")
+```
+
+
+```{r echo=FALSE, results='asis'}
+if(!is.null(di$meta)) {
+  nms <- names(di$meta)
+  tmpdf <- data.frame(
+    v1 = gsub("_", " ", nms),
+    v2 = unname(unlist(di$meta)))
+
+  txt <- c("# Meta #", "",
+    "|  property  |  value  |",
+    "| ---------- | ------- |",
+    apply(tmpdf, 1, function(x) {
+      paste("|", paste(x, collapse = " | "), "|")}))
+
+  cat(paste(txt, collapse = "\n"))
+}
+```
+
+# Sample #
+
+```{r echo=FALSE}
+di$head
+```
+
+# Missing Values #
+
+```{r echo=FALSE, message=FALSE}
+plot_missing(di)
+```
+
+# Variables #
+
+<!--
+
+```{r echo=FALSE, results='asis'}
+vartab <- data.frame(variable = names(di$var_summ), type = unname(sapply(di$var_summ, function(x) x$type)))
+knitr::kable(vartab)
+```
+-->
+
+```{r echo=FALSE, results='asis'}
+txt <- ""
+if(length(di$na_cols) > 0)
+ txt <- c(paste0("The following variables are all NA: `",
+  paste0(names(di$na_cols), collapse = "`, `"), "`"), "")
+
+if(length(di$dups) > 0) {
+  txt <- c(txt, "The following variables are duplicates:", "",
+    sapply(di$dups, function(x) {
+      paste0("- `", paste0(x, collapse = "`, `"), "`")
+    }), "")
+
+cat(paste(txt, collapse = "\n"))
+}
+```
+
+## historicdistrict ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["historicdistrict"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## code ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["code"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## pin ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["pin"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## unpaidfees ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["unpaidfees"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## contractors ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["contractors"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## heattype ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["heattype"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## nextstatusdate ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["nextstatusdate"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## baths ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["baths"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## owner ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["owner"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## councildist ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["councildist"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## issuedate ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["issuedate"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## beds ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["beds"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## filingdate ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["filingdate"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## projectname ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["projectname"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## constrval ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["constrval"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## currentstatusdate ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["currentstatusdate"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## bldgarea ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["bldgarea"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## nextstatus ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["nextstatus"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## type ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["type"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## division ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["division"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## totalinspections ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["totalinspections"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## description ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["description"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## leadagency ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["leadagency"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## basementar ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["basementar"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## zoning ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["zoning"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## daysissued ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["daysissued"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## currentstatus ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["currentstatus"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## opencomments ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["opencomments"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## bondamount ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["bondamount"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## landuseshort ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["landuseshort"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## address ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["address"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## daysopen ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["daysopen"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## subdivision ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["subdivision"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## exitreason ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["exitreason"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## applicant ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["applicant"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## totalfees ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["totalfees"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## isclosed ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["isclosed"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## m_s ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["m_s"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## numstring ##
+
+### Distribution of top 50 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["numstring"]]
+vr$artifacts$fg
+```
+
+### Frequency table of top 100 variables ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## landuse ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["landuse"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## secondfloo ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["secondfloo"]]
+vr$artifacts$fg
+```
+
+### Frequency table ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+## location_1.latitude ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["location_1.latitude"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
+
+
+
+
+## location_1.longitude ##
+
+### Distribution ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr <- di$var_summ[["location_1.longitude"]]
+vr$artifacts$fg
+```
+
+### Summary statistics ###
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+vr$artifacts$tb
+```
